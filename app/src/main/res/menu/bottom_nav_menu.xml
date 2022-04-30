@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_homeFragment"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/title_home"
         />
 
     <item
-        android:id="@+id/navigation_weather"
+        android:id="@+id/navigation_weatherFragment"
         android:icon="@drawable/ic_baseline_cloud_24"
         android:title="@string/title_Weather" />
 
@@ -17,7 +17,7 @@
         android:title="@string/title_Contacts" />
 
     <item
-        android:id="@+id/navigation_messages"
+        android:id="@+id/navigation_messagesFragment"
         android:icon="@drawable/ic_baseline_message_24"
         android:title="@string/title_messages" />
 </menu>

@@ -3,25 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/navigation_homeFragment">
 
     <fragment
-        android:id="@+id/messagesFragment"
+        android:id="@+id/navigation_messagesFragment"
         android:name="edu.uw.tcss450.ckald.team1tcss450.ui.messages.MessagesFragment"
         android:label="fragment_messages"
         tools:layout="@layout/fragment_messages" />
     <fragment
-        android:id="@+id/weatherFragment"
+        android:id="@+id/navigation_weatherFragment"
         android:name="edu.uw.tcss450.ckald.team1tcss450.ui.weather.WeatherFragment"
         android:label="fragment_weather"
         tools:layout="@layout/fragment_weather" />
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/navigation_homeFragment"
         android:name="edu.uw.tcss450.ckald.team1tcss450.ui.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/contactsFragment"
+        android:id="@+id/navigation_contactsFragment"
         android:name="edu.uw.tcss450.ckald.team1tcss450.ui.contacts.ContactsFragment"
         android:label="fragment_contacts"
         tools:layout="@layout/fragment_contacts" />
