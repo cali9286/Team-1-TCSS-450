@@ -8,21 +8,21 @@
     <fragment
         android:id="@+id/navigation_messagesFragment"
         android:name="edu.uw.tcss450.ckald.team1tcss450.ui.messages.MessagesFragment"
-        android:label="fragment_messages"
+        android:label="@string/title_messages"
         tools:layout="@layout/fragment_messages" />
     <fragment
         android:id="@+id/navigation_weatherFragment"
         android:name="edu.uw.tcss450.ckald.team1tcss450.ui.weather.WeatherFragment"
-        android:label="fragment_weather"
+        android:label="@string/title_Weather"
         tools:layout="@layout/fragment_weather" />
     <fragment
         android:id="@+id/navigation_homeFragment"
         android:name="edu.uw.tcss450.ckald.team1tcss450.ui.HomeFragment"
-        android:label="fragment_home"
+        android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_contactsFragment"
         android:name="edu.uw.tcss450.ckald.team1tcss450.ui.contacts.ContactsFragment"
-        android:label="fragment_contacts"
+        android:label="@string/title_Contacts"
         tools:layout="@layout/fragment_contacts" />
 </navigation>
