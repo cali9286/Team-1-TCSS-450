@@ -5,11 +5,10 @@
         android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/title_home"
         />
-
     <item
-        android:id="@+id/navigation_weatherFragment"
-        android:icon="@drawable/ic_baseline_cloud_24"
-        android:title="@string/title_Weather" />
+        android:id="@+id/navigation_contactsFragment"
+        android:icon="@drawable/ic_baseline_contacts_24"
+        android:title="@string/title_Contacts" />
 
     <item
         android:id="@+id/navigation_messagesFragment"
@@ -17,8 +16,7 @@
         android:title="@string/title_messages" />
 
     <item
-        android:id="@+id/navigation_contactsFragment"
-        android:icon="@drawable/ic_baseline_contacts_24"
-        android:title="@string/title_Contacts" />
-
+        android:id="@+id/navigation_weatherFragment"
+        android:icon="@drawable/ic_baseline_cloud_24"
+        android:title="@string/title_Weather" />
 </menu>
