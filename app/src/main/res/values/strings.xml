@@ -17,4 +17,7 @@
     <string name="title_Weather">Weather</string>
     <string name="title_Contacts">Contacts</string>
     <string name="title_messages">Messages</string>
+
+    <string name="base_url_service">https://ckald-tcss450-labs-service.herokuapp.com/</string>
+    <string name="base_url_auth">https://ckald-tcss450-labs-auth.herokuapp.com/</string>
 </resources>

@@ -25,6 +25,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+import edu.uw.tcss450.ckald.team1tcss450.R;
+
 
 public class RegisterViewModel extends AndroidViewModel{
 
@@ -68,7 +70,8 @@ public class RegisterViewModel extends AndroidViewModel{
                         final String last,
                         final String email,
                         final String password) {
-        String url = "https://arturn-tcss450-labs-auth.herokuapp.com/auth";
+        String url = getApplication().getResources().getString(R.string.base_url_auth) +
+                "auth";
         JSONObject body = new JSONObject();
         try {
             body.put("first", first);
