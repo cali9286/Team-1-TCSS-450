@@ -72,9 +72,16 @@ public class WeatherFragment extends Fragment {
 
 
     @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mcontext = context;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -84,7 +91,7 @@ public class WeatherFragment extends Fragment {
         //fill the whole screen.
         // this line (84) buggy doesn't like the bottom nav graph
         //*******************************
-        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        //getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN, WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_weather, container, false);
@@ -100,20 +107,24 @@ public class WeatherFragment extends Fragment {
         searchIV = v.findViewById(R.id.idIVSearch);
 
         weatherRecycleArrayList = new ArrayList<>();
-        RVadapter = new WeatherAdapter(getActivity(), weatherRecycleArrayList);
+        RVadapter = new WeatherAdapter(mcontext, weatherRecycleArrayList);
         weatherRV.setAdapter(RVadapter);
 
-        locationManager = (LocationManager) mcontext.getSystemService(Context.LOCATION_SERVICE);
+        //locationManager = (LocationManager) mcontext.getSystemService(Context.LOCATION_SERVICE);
 
 
-        if(ActivityCompat.checkSelfPermission(mcontext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(),Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},PermissionCode);
+        /*
+        if(ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(),Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},PermissionCode);
+        } else {
+            Log.d("DB","Got to else");
         }
 
         Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
         cityName = getCityName(location.getLongitude(), location.getLatitude());
-
+        */
+        cityName = "Tacoma";
         getWeatherInfo(cityName);
 
         searchIV.setOnClickListener(new View.OnClickListener() {
@@ -131,25 +142,27 @@ public class WeatherFragment extends Fragment {
         return v;
     }
 
+
+    /*
     //may have bugs to work out here. technically deprecated ********************
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(requestCode==PermissionCode) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(mcontext, "Permission granted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Permission granted", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(mcontext, "Please Provide Permissions", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Please Provide Permissions", Toast.LENGTH_SHORT).show();
                 //close activity below. but make work for fragment not activity.
                 //finish(); ********************
             }
         }
     }
-
+    */
 
     private String getCityName(double lon, double lat) {
         //set to "error" so as not to set yet
-        String cityName = "Tacoma";
+        String cityName = "";
 
         //********************
         //Anywhere we use context or getActivity = buggy
@@ -175,6 +188,7 @@ public class WeatherFragment extends Fragment {
         }
         return cityName;
     }
+
     private void getWeatherInfo(String CityName) {
         String url = "https://api.weatherapi.com/v1/forecast.json?key=95203d195a4b434780402424221205&q="+ CityName +"&days=1&aqi=no&alerts=no";
         cityNameTV.setText(cityName);
@@ -193,12 +207,16 @@ public class WeatherFragment extends Fragment {
                 //set current temp to our TextView for temp, am/pm, current condition, forecast
                 try {
                     String currentTemp = response.getJSONObject("current").getString("temp_f");
-                    tempTV.setText(currentTemp + "°F");
+                    tempTV.setText(currentTemp.concat("°F"));
                     int dayTime = response.getJSONObject("current").getInt("is_day");
                     String condition = response.getJSONObject("current").getJSONObject("condition").getString("text");
                     String conditionIcon = response.getJSONObject("current").getJSONObject("condition").getString("icon");
                     //load the icon with Picasso
-                    Picasso.get().load("https:"+conditionIcon).into(IconIV);
+                    //Picasso.get().load("https:"+conditionIcon).into(IconIV);
+                    //*********************
+                    //maybe try the .concat
+                    Picasso.get().load("https:".concat(conditionIcon)).into(IconIV);
+                    //****************
                     conditionTV.setText(condition);
 
                     //**********************app/src/main/res/drawable-normal/daytimebackground.jpg
@@ -221,7 +239,6 @@ public class WeatherFragment extends Fragment {
                         String image = hourOBJ.getJSONObject("condition").getString("icon");
                         weatherRecycleArrayList.add(new WeatherRecycle(time,temp,image));
                     }
-                    //havent physically seen this line work
                     RVadapter.notifyDataSetChanged();
 
                 } catch (JSONException e) {
@@ -239,6 +256,5 @@ public class WeatherFragment extends Fragment {
 
         RQ.add(JsonOR);
     }
-
 
 }
