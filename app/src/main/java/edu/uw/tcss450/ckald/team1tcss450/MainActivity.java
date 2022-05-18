@@ -1,6 +1,8 @@
 package edu.uw.tcss450.ckald.team1tcss450;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
@@ -12,12 +14,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CompoundButton;
 
-import com.auth0.android.jwt.JWT;
+
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -28,8 +32,9 @@ import edu.uw.tcss450.ckald.team1tcss450.services.PushReceiver;
 import edu.uw.tcss450.ckald.team1tcss450.ui.messages.Message;
 import edu.uw.tcss450.ckald.team1tcss450.ui.messages.MessagesViewModel;
 
+
 public class MainActivity extends AppCompatActivity {
-//test comment
+    //test comment
     //artur
     //michael comment
     //my new comment
@@ -41,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
     private MainPushMessageReceiver mPushMessageReceiver;
 
     private NewMessageCountViewModel mNewMessageModel;
+
+    SwitchCompat switchCompat;
+    SharedPreferences sharedPreferences = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
 
+    }
 
 
     @Override
@@ -148,9 +157,35 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onPause() {
         super.onPause();
-        if (mPushMessageReceiver != null){
+        if (mPushMessageReceiver != null) {
             unregisterReceiver(mPushMessageReceiver);
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.navigation_themes) {
+            //TODO open a settings fragment
+            Log.d("THEMES", "Clicked");
+            setContentView(R.layout.fragment_themes);
+            return true;
+        } else if(id == R.id.navigation_profile) {
+            setContentView(R.layout.fragment_profile);
+            Log.d("PROFILE", "Clicked");
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+
+    }
+
 
 }

@@ -25,4 +25,18 @@
         android:name="edu.uw.tcss450.ckald.team1tcss450.ui.contacts.ContactsFragment"
         android:label="@string/title_Contacts"
         tools:layout="@layout/fragment_contacts" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="edu.uw.tcss450.ckald.team1tcss450.ui.settings.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile"
+        />
+
+    <fragment
+        android:id="@+id/navigation_themes"
+        android:name="edu.uw.tcss450.ckald.team1tcss450.ui.settings.ThemesFragment"
+        android:label="@string/title_themes"
+        tools:layout="@layout/fragment_themes"
+        />
 </navigation>

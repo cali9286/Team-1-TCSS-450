@@ -11,6 +11,11 @@
     <string name="display_header_title">Phish Shows Welcomes:</string>
     <string name="image_description_logo">The Phish Logo</string>
 
+    <!--Settings -->
+    <string name="title_themes">Themes</string>
+    <string name="title_profile">Profile</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_home">Home</string>
