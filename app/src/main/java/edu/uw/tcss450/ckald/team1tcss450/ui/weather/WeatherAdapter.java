@@ -49,7 +49,8 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
 
         //get variables to put into our RV
         holder.tempTV.setText(adapter.getTemp() + "°F");
-        Picasso.get().load("https://cdn.weatherapi.com/weather/64x64/night/113.png").into(holder.conditionIV);
+        //Picasso.get().load("https://cdn.weatherapi.com/weather/64x64/night/113.png").into(holder.conditionIV);
+        Picasso.get().load("https:".concat(weatherRecycleArrayList.get(position).getIcon())).into(holder.conditionIV);
 
         //change the format of our time that we get.
         SimpleDateFormat in = new SimpleDateFormat("YYYY-MM-DD HH:MM");
