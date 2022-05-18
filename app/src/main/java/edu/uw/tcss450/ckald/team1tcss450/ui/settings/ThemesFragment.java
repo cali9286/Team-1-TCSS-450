@@ -30,7 +30,7 @@ import edu.uw.tcss450.ckald.team1tcss450.model.UserInfoViewModel;
  */
 public class ThemesFragment extends Fragment {
 
-    //test
+
     private FragmentThemesBinding binding;
 
     private Switch NightMode;

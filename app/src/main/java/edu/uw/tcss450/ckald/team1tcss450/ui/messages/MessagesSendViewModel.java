@@ -26,7 +26,7 @@ import edu.uw.tcss450.ckald.team1tcss450.R;
 import edu.uw.tcss450.ckald.team1tcss450.io.RequestQueueSingleton;
 
 public class MessagesSendViewModel extends AndroidViewModel {
-
+    //testing
     private final MutableLiveData<JSONObject> mResponse;
 
     public MessagesSendViewModel(@NonNull Application application) {
