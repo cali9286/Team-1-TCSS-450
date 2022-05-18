@@ -50,7 +50,7 @@ import edu.uw.tcss450.ckald.team1tcss450.R;
  */
 public class WeatherFragment extends Fragment {
 
-
+    // random thing.
     //******************
     //context may be null here
     private Context mcontext = this.getContext();
@@ -224,7 +224,8 @@ public class WeatherFragment extends Fragment {
                     //the file path may need to be modified. usually uses url.
                     //********************
                     if(dayTime == 1) {
-                        Picasso.get().load("https://commons.wikimedia.org/wiki/Commons:Quality_images#/media/File:Gull_portrait_ca_usa.jpg").into(backIV);
+
+                        Picasso.get().load("app/src/main/res/drawable-normal/daytimebackground.jpg").into(backIV);
                     } else {
                         Picasso.get().load("app/src/main/res/drawable-normal/nightbackground.png").into(backIV);
                     }
@@ -238,6 +239,7 @@ public class WeatherFragment extends Fragment {
                         String temp = hourOBJ.getString("temp_f");
                         String image = hourOBJ.getJSONObject("condition").getString("icon");
                         weatherRecycleArrayList.add(new WeatherRecycle(time,temp,image));
+                        RVadapter.notifyDataSetChanged();
                     }
                     RVadapter.notifyDataSetChanged();
 
