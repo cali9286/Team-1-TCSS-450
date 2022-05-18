@@ -50,7 +50,7 @@ import edu.uw.tcss450.ckald.team1tcss450.R;
  */
 public class WeatherFragment extends Fragment {
 
-
+    // random thing.
     //******************
     //context may be null here
     private Context mcontext = this.getContext();
