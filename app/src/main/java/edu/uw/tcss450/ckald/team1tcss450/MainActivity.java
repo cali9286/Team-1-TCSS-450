@@ -9,6 +9,7 @@ import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -25,15 +26,22 @@ import android.widget.CompoundButton;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+
 import edu.uw.tcss450.ckald.team1tcss450.databinding.ActivityMainBinding;
 import edu.uw.tcss450.ckald.team1tcss450.model.NewMessageCountViewModel;
 import edu.uw.tcss450.ckald.team1tcss450.model.UserInfoViewModel;
 import edu.uw.tcss450.ckald.team1tcss450.services.PushReceiver;
+import edu.uw.tcss450.ckald.team1tcss450.ui.contacts.ContactModel;
+import edu.uw.tcss450.ckald.team1tcss450.ui.contacts.ContactsRecyclerViewAdapter;
 import edu.uw.tcss450.ckald.team1tcss450.ui.messages.Message;
 import edu.uw.tcss450.ckald.team1tcss450.ui.messages.MessagesViewModel;
 
 
 public class MainActivity extends AppCompatActivity {
+    RecyclerView recyclerView;
+    ArrayList<ContactModel> arrayList = new ArrayList<ContactModel>();
+    ContactsRecyclerViewAdapter adapter;
     //test comment
     //artur
     //michael comment
@@ -100,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 badge.setVisible(false);
             }
         });
+
 
 
     }
