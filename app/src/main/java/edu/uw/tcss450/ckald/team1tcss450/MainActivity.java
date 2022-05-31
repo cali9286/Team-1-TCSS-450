@@ -187,17 +187,28 @@ public class MainActivity extends AppCompatActivity {
             Log.d("THEMES", "Clicked");
             setContentView(R.layout.fragment_themes);
             return true;
-        } else if(id == R.id.navigation_profile) {
+        }
+        if(id == R.id.navigation_profile) {
             setContentView(R.layout.fragment_profile);
             Log.d("PROFILE", "Clicked");
             return true;
         }
-
+        if(id == R.id.action_sign_out){
+            signOut();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
-
     }
 
+    private void signOut() {
+        SharedPreferences prefs =
+                getSharedPreferences(
+                        getString(R.string.keys_shared_prefs),
+                        Context.MODE_PRIVATE);
 
-
+        prefs.edit().remove(getString(R.string.keys_prefs_jwt)).apply();
+        //End the app completely
+        finishAndRemoveTask();
+    }
 
 }
