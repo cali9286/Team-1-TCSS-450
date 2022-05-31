@@ -13,7 +13,7 @@ import edu.uw.tcss450.ckald.team1tcss450.R;
 import edu.uw.tcss450.ckald.team1tcss450.databinding.ItemContactBinding;
 
 public class ContactsRecyclerViewAdapter  extends RecyclerView.Adapter<ContactsRecyclerViewAdapter.ContactViewHolder> {
-    //Store all contacts to present
+
     private final List<ContactModel> mContacts;
 
     public ContactsRecyclerViewAdapter(List<ContactModel> items) {
@@ -33,6 +33,7 @@ public class ContactsRecyclerViewAdapter  extends RecyclerView.Adapter<ContactsR
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
         holder.setContact(mContacts.get(position));
     }
+
     @Override
     public int getItemCount() {
         return mContacts.size();

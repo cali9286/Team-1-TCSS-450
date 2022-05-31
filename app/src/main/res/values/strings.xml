@@ -25,4 +25,8 @@
 
     <string name="base_url_service">https://nalim2-tcss450-labs-service.herokuapp.com/</string>
     <string name="base_url_auth">https://nalim2-tcss450-labs-auth.herokuapp.com/</string>
+    <string name="keys_json_contact_name" />
+    <string name="keys_json_contact_id" />
+    <string name="keys_json_contact_response" />
+    <string name="keys_json_contact_email" />
 </resources>

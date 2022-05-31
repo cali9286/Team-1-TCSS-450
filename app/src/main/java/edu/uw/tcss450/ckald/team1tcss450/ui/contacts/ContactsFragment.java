@@ -18,19 +18,19 @@ import java.util.ArrayList;
 import edu.uw.tcss450.ckald.team1tcss450.R;
 import edu.uw.tcss450.ckald.team1tcss450.databinding.FragmentContactsBinding;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ContactsFragment extends Fragment {
 
     private ContactsListViewModel mModel;
 
-        @Override
+
+    @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        ViewModelProvider provider = new ViewModelProvider(getActivity());
+
         mModel = new ViewModelProvider(getActivity()).get(ContactsListViewModel.class);
-        mModel.connectGet();
+
     }
 
     @Override
@@ -48,14 +48,17 @@ public class ContactsFragment extends Fragment {
         final RecyclerView rv = binding.recyclerContacts;
 
         ArrayList<ContactModel> arrayList = new ArrayList<ContactModel>();
+
+
         rv.setAdapter(new ContactsRecyclerViewAdapter(arrayList));
         rv.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
-        mModel.addContactListObserver(getViewLifecycleOwner(), list -> {
-            rv.getAdapter().notifyDataSetChanged();
-            rv.scrollToPosition(rv.getAdapter().getItemCount() - 1);
+        mModel.addContactListObserver(getViewLifecycleOwner(), contactList -> {
+            if(!contactList.isEmpty()) {
+                binding.recyclerContacts.setAdapter(
+                        new ContactsRecyclerViewAdapter(contactList)
+                );
+            }
         });
-
-
     }
 }
