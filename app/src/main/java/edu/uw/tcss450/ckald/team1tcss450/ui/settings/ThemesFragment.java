@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import android.preference.Preference;
 import android.view.LayoutInflater;
@@ -28,6 +30,8 @@ import android.widget.Switch;
 import android.view.MenuItem;
 import android.content.SharedPreferences;
 import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import edu.uw.tcss450.ckald.team1tcss450.R;
 import edu.uw.tcss450.ckald.team1tcss450.databinding.FragmentHomeBinding;
@@ -53,6 +57,7 @@ public class ThemesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -66,14 +71,12 @@ public class ThemesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.themeDefault.setOnClickListener(button -> Change.changeTheme(getActivity(),
-                new SavePreference(getContext()).retrieveInt("theme", Change.DEFAULT_THEME)));
+        binding.themeStandard.setOnClickListener(button -> Change.changeTheme(getActivity(),
+                new SavePreference(getContext()).retrieveInt("theme", Change.STANDARD_THEME)));
         binding.themePurple.setOnClickListener(button -> Change.changeTheme(getActivity(),
                 new SavePreference(getContext()).retrieveInt("theme", Change.PURPLE_THEME)));
         binding.themeTeal.setOnClickListener(button -> Change.changeTheme( getActivity(),
                 new SavePreference(getContext()).retrieveInt("theme",Change.TEAL_THEME)));
-
-
 
     }
 

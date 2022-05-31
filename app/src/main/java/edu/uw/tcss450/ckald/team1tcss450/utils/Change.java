@@ -8,7 +8,7 @@ import edu.uw.tcss450.ckald.team1tcss450.R;
 public class Change {
 
     private static int sTheme;
-    public final static int DEFAULT_THEME = 0;
+    public final static int STANDARD_THEME = 0;
     public final static int PURPLE_THEME  = 1;
     public final static int TEAL_THEME = 2;
 
@@ -31,14 +31,15 @@ public class Change {
     public static void onActivityCreateSetTheme(MainActivity activity) {
         switch (sTheme) {
             default:
-            case DEFAULT_THEME:
-                activity.getTheme().applyStyle(R.style.Theme_Team1TCSS450, true);
+            case STANDARD_THEME:
+                activity.getTheme().applyStyle(R.style.AppTheme, true);
                 break;
             case PURPLE_THEME:
-                activity.getTheme().applyStyle(R.style.Theme_Purple, true);
+                activity.getTheme().applyStyle(R.style.ThemePurple, true);
                 break;
             case TEAL_THEME:
-                activity.getTheme().applyStyle(R.style.Theme_Teal, true);
+                activity.getTheme().applyStyle(R.style.ThemeTeal, true);
+                break;
 
         }
     }

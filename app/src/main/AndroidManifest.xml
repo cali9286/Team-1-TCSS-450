@@ -23,7 +23,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Team1TCSS450">
+        android:theme="@style/AppTheme"
+        >
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".AuthActivity"
             android:exported="true">
@@ -33,6 +34,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
 
         <!-- Pushy Declarations -->
 
