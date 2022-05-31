@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.contacts.ContactsFragment">
+    android:layout_height="match_parent">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_contacts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/title_Contacts" />
+        android:orientation="vertical"
+        app:layoutManager="LinearLayoutManager"
+        tools:context="edu.uw.tcss450.uiandnavigationlab.ui.blog.BlogListFragment"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:listitem="@layout/item_contact" />
 
-</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
