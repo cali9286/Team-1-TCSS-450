@@ -31,16 +31,16 @@
             android:src="@color/black_shade_1" />
 
         <TextView
+            android:id="@+id/idTVCityName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:padding="20dp"
             android:text="City Name"
             android:textAlignment="center"
-            android:gravity="center"
             android:textColor="@color/white"
-            android:layout_marginTop="30dp"
-            android:padding="20dp"
-            android:textSize="18sp"
-            android:id="@+id/idTVCityName"/>
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -89,11 +89,14 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/idTVTemp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/idTVTemp"
             android:layout_below="@id/idLin"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center_horizontal"
             android:padding="5dp"
             android:text="23"
@@ -101,12 +104,15 @@
             android:textSize="70dp" />
 
         <ImageView
+            android:id="@+id/idIVIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/idIVIcon"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/idTVTemp"
-            android:layout_margin="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:src="@mipmap/ic_launcher" />
         <TextView
             android:layout_width="match_parent"
