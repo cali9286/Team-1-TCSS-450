@@ -2,74 +2,63 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout2"
+    android:id="@+id/theme_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.settings.ThemesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <!-- TODO: Update blank fragment layout -->
-
-
-    <Switch
-        android:id="@+id/switch_nightmode"
-        android:layout_width="367dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="628dp"
-        android:checked="false"
-        android:text="Night mode"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/title_themes"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="33dp" />
-
-    <!-- <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch_nightmode"
-        android:layout_width="348dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="633dp"
-        android:checked="false"
-        android:padding="10dp"
-        android:text="Night Mode"
-        android:textSize="20sp"
-        android:textStyle="normal"
+        android:id="@+id/select_theme"
+        android:layout_width="370dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="655dp"
+        android:fontFamily="sans-serif"
+        android:text="Color Theme"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#0E0303"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:switchPadding="10dp" /> -->
+         />
 
-    <Button
-        android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:id="@+id/groupradio"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginEnd="132dp"
-        android:layout_marginBottom="131dp"
-        android:background="#009284"
-        android:padding="10dp"
-        android:text="Apply Changes"
-        android:textColor="#fff"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/select_theme">
 
+        <RadioButton
+            android:id="@+id/theme_default"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_default"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:id="@+id/theme_purple"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_purple"
+            android:textSize="20dp" />
+
+
+        <RadioButton
+            android:id="@+id/theme_teal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_teal"
+            android:textSize="20dp" />
+
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

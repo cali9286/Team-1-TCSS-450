@@ -31,6 +31,7 @@ import edu.uw.tcss450.ckald.team1tcss450.model.UserInfoViewModel;
 import edu.uw.tcss450.ckald.team1tcss450.services.PushReceiver;
 import edu.uw.tcss450.ckald.team1tcss450.ui.messages.Message;
 import edu.uw.tcss450.ckald.team1tcss450.ui.messages.MessagesViewModel;
+import edu.uw.tcss450.ckald.team1tcss450.utils.Change;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Change.onActivityCreateSetTheme(this);
         MainActivityArgs args = MainActivityArgs.fromBundle(getIntent().getExtras());
 
         new ViewModelProvider(this,
@@ -186,6 +187,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
+
+
 
 
 }
