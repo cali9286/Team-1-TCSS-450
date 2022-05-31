@@ -17,4 +17,17 @@
     <color name="secondaryDarkColor">#86764e</color>
     <color name="secondaryTextColorFade">#222222</color>
     <color name="black_shade_1">#292D36</color>
+
+    <!--- Purple Theme-->
+    <color name="colorPrimary_purple">#4a4e69</color>
+    <color name="coloryPrimary_darkpurple">#292D36</color>
+    <color name="primaryLightColor_purple">#C4C5CE</color>
+    <color name="colorAccent_purple">#fcdfd8</color>
+
+    <!-- Teal Theme -->
+    <color name="colorPrimary_Teal">#26a69a</color>
+    <color name="colorPrimaryDark_Teal">#00766c</color>
+    <color name="colorLightPrimary_Teal">#64d8cb</color>
+    <color name="colorAccent_Teal">#e0f2f1</color>
+
 </resources>

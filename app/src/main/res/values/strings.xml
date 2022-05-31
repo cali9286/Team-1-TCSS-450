@@ -13,6 +13,10 @@
 
     <!--Settings -->
     <string name="title_themes">Themes</string>
+    <string name="button_default">Default</string>
+    <string name="button_purple">Purple Theme</string>
+    <string name="button_teal">Teal Theme</string>
+
     <string name="title_profile">Profile</string>
 
 
