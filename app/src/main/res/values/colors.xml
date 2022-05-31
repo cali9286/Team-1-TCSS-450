@@ -24,7 +24,7 @@
     <color name="primaryLightColor_purple">#C4C5CE</color>
     <color name="colorAccent_purple">#fcdfd8</color>
 
-    <!-- DARK THEME -->
+    <!-- Teal Theme -->
     <color name="colorPrimary_Teal">#26a69a</color>
     <color name="colorPrimaryDark_Teal">#00766c</color>
     <color name="colorLightPrimary_Teal">#64d8cb</color>
