@@ -191,7 +191,7 @@ public class WeatherFragment extends Fragment {
 
     private void getWeatherInfo(String CityName) {
         String url = "https://api.weatherapi.com/v1/forecast.json?key=95203d195a4b434780402424221205&q="+ CityName +"&days=1&aqi=no&alerts=no";
-        cityNameTV.setText(cityName);
+        cityNameTV.setText(CityName);
         RequestQueue RQ = Volley.newRequestQueue(mcontext);
 
         JsonObjectRequest JsonOR = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -206,6 +206,7 @@ public class WeatherFragment extends Fragment {
 
                 //set current temp to our TextView for temp, am/pm, current condition, forecast
                 try {
+                    //cityNameTV.setText(cityName);
                     String currentTemp = response.getJSONObject("current").getString("temp_f");
                     tempTV.setText(currentTemp.concat("°F"));
                     int dayTime = response.getJSONObject("current").getInt("is_day");
