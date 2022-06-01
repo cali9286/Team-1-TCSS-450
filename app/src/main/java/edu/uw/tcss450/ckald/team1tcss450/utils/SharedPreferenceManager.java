@@ -4,10 +4,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-public class SavePreference {
+
+public class SharedPreferenceManager {
 
 
-    private final SharedPreferences mSavePreference;
+    /**
+     * Store user settings.
+     */
+    private final SharedPreferences mPreference;
 
     private final Context context;
 
@@ -16,9 +20,9 @@ public class SavePreference {
      * An SharedPreferencesManager constructor.
      * @param context the context of the shared manager
      */
-    public SavePreference(Context context) {
+    public SharedPreferenceManager(Context context) {
         this.context = context;
-        mSavePreference = PreferenceManager.getDefaultSharedPreferences(context);
+        mPreference = PreferenceManager.getDefaultSharedPreferences(context);
     }
     /**
      * Retrieve an int in sharedPreferences
@@ -28,6 +32,6 @@ public class SavePreference {
      */
     public int retrieveInt(String tag, int defValue) {
 
-        return mSavePreference.getInt(tag, defValue);
+        return mPreference.getInt(tag, defValue);
     }
 }

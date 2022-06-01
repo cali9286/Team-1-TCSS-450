@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/cliff/AndroidStudioProjects/Team1TCSS450/app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.1235" />
+        <entry key="..\:/Users/cliff/AndroidStudioProjects/Team1TCSS450/app/src/main/res/drawable/ic_message_notification.xml" value="0.1235" />
+        <entry key="..\:/Users/cliff/AndroidStudioProjects/Team1TCSS450/app/src/main/res/drawable/ic_send_dark.xml" value="0.1235" />
         <entry key="..\:/Users/cliff/AndroidStudioProjects/Team1TCSS450/app/src/main/res/layout/activity_auth.xml" value="0.12083333333333333" />
         <entry key="..\:/Users/cliff/AndroidStudioProjects/Team1TCSS450/app/src/main/res/layout/activity_main.xml" value="0.136" />
+        <entry key="..\:/Users/cliff/AndroidStudioProjects/Team1TCSS450/app/src/main/res/layout/fragment_chat_message.xml" value="0.12083333333333333" />
         <entry key="..\:/Users/cliff/AndroidStudioProjects/Team1TCSS450/app/src/main/res/layout/fragment_contacts.xml" value="0.1125" />
         <entry key="..\:/Users/cliff/AndroidStudioProjects/Team1TCSS450/app/src/main/res/layout/fragment_home.xml" value="0.1125" />
         <entry key="..\:/Users/cliff/AndroidStudioProjects/Team1TCSS450/app/src/main/res/layout/fragment_messages.xml" value="0.1125" />
@@ -15,38 +19,27 @@
         <entry key="..\:/Users/cliff/AndroidStudioProjects/Team1TCSS450/app/src/main/res/menu/bottom_nav_menu.xml" value="0.136" />
         <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/activity_auth.xml" value="0.1" />
         <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
-        <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_chat_message.xml" value="0.3625" />
         <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_contacts.xml" value="0.1" />
-        <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
-        <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_messages.xml" value="0.18541666666666667" />
-        <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
-        <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_register.xml" value="0.3625" />
-        <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_themes.xml" value="0.22" />
-        <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_themes_view_model.xml" value="0.3625" />
+        <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_profile.xml" value="0.21875" />
+        <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_themes.xml" value="0.1" />
+        <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_weather.xml" value="0.3625" />
         <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18541666666666667" />
-        <entry key="..\:/Users/lynda/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/menu/toolbar.xml" value="0.3625" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/activity_auth.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/activity_main.xml" value="0.18958333333333333" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_register.xml" value="0.1" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/menu/bottom_nav_graph.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18958333333333333" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/drawable/ic_baseline_contacts_24.xml" value="0.1" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/activity_auth.xml" value="0.14402173913043478" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_chat_message.xml" value="0.14402173913043478" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_contacts.xml" value="0.1" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_home.xml" value="0.16210739614994935" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_messages.xml" value="0.16210739614994935" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_profile.xml" value="0.14402173913043478" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_register.xml" value="0.14402173913043478" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_sign_in.xml" value="0.1" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_themes.xml" value="0.14402173913043478" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/fragment_weather.xml" value="0.1" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/item_contact.xml" value="0.1" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/layout/weather_rv.xml" value="0.14402173913043478" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/sozit/AndroidStudioProjects/Team-1-TCSS-450/app/src/main/res/menu/toolbar.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/drawable/ic_baseline_cloud_24.xml" value="0.15" />
         <entry key="app/src/main/res/drawable/ic_baseline_contacts_24.xml" value="0.101" />
+        <entry key="app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.1065" />
+        <entry key="app/src/main/res/drawable/rv_background.xml" value="0.2205" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1393110435663627" />
+        <entry key="app/src/main/res/layout/fragment_contacts.xml" value="0.1393110435663627" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_messages.xml" value="0.1393110435663627" />
+        <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.13958333333333334" />
+        <entry key="app/src/main/res/layout/fragment_weather.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/weather_rv.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/menu/bottom_nav_graph.xml" value="0.29791666666666666" />
       </map>
     </option>
