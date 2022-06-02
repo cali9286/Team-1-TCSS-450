@@ -30,10 +30,10 @@ public class Change {
      */
     public static void onActivityCreateSetTheme(MainActivity activity) {
         switch (sTheme) {
-            default:
             case STANDARD_THEME:
                 activity.getTheme().applyStyle(R.style.AppTheme, true);
                 break;
+            default:
             case PURPLE_THEME:
                 activity.getTheme().applyStyle(R.style.ThemePurple, true);
                 break;

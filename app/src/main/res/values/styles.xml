@@ -3,9 +3,10 @@
     <!-- This is a MaterialDesignTheme. Required when using Material Components -->
     <style name="Theme.MyApp" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:colorPrimary">@color/colorPrimary</item>
-        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary_purple</item>
+        <item name="colorPrimaryDark">@color/coloryPrimary_darkpurple</item>
+        <item name="colorAccent">@color/colorAccent_purple</item>
+        <item name="colorOnPrimary">@color/white</item>
     </style>
 
     <style name="Widget.App.Button.OutlinedButton.IconOnly" parent="Widget.MaterialComponents.Button.OutlinedButton">

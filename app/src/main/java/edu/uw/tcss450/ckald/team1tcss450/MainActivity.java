@@ -1,7 +1,6 @@
 package edu.uw.tcss450.ckald.team1tcss450;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -20,7 +19,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.CompoundButton;
 
 
 import com.google.android.material.badge.BadgeDrawable;
@@ -32,7 +30,6 @@ import edu.uw.tcss450.ckald.team1tcss450.databinding.ActivityMainBinding;
 import edu.uw.tcss450.ckald.team1tcss450.model.NewMessageCountViewModel;
 import edu.uw.tcss450.ckald.team1tcss450.model.UserInfoViewModel;
 import edu.uw.tcss450.ckald.team1tcss450.services.PushReceiver;
-import edu.uw.tcss450.ckald.team1tcss450.ui.contacts.ContactModel;
 import edu.uw.tcss450.ckald.team1tcss450.ui.contacts.ContactsRecyclerViewAdapter;
 import edu.uw.tcss450.ckald.team1tcss450.ui.messages.Message;
 import edu.uw.tcss450.ckald.team1tcss450.ui.messages.MessagesViewModel;
@@ -41,7 +38,7 @@ import edu.uw.tcss450.ckald.team1tcss450.utils.Change;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
-    ArrayList<ContactModel> arrayList = new ArrayList<ContactModel>();
+    //ArrayList<ContactModel> arrayList = new ArrayList<ContactModel>();
     ContactsRecyclerViewAdapter adapter;
     //test comment
     //artur

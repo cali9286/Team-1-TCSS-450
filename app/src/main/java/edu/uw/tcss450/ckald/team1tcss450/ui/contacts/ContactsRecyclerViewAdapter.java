@@ -1,58 +1,73 @@
 package edu.uw.tcss450.ckald.team1tcss450.ui.contacts;
 
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 import edu.uw.tcss450.ckald.team1tcss450.R;
-import edu.uw.tcss450.ckald.team1tcss450.databinding.ItemContactBinding;
+import edu.uw.tcss450.ckald.team1tcss450.ui.contacts.dummy.DummyContent;
 
-public class ContactsRecyclerViewAdapter  extends RecyclerView.Adapter<ContactsRecyclerViewAdapter.ContactViewHolder> {
+public class ContactsRecyclerViewAdapter  extends RecyclerView.Adapter<ContactsRecyclerViewAdapter.ViewHolder> {
 
-    private final List<ContactModel> mContacts;
+    private final List<DummyContent.Contact> mValues;
+    private final ContactsFragment.OnListFragmentInteractionListener mListener;
 
-    public ContactsRecyclerViewAdapter(List<ContactModel> items) {
-        this.mContacts = items;
-        notifyDataSetChanged();
-    }
-
-    @NonNull
-    @Override
-    public ContactViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ContactViewHolder(LayoutInflater
-                .from(parent.getContext())
-                .inflate(R.layout.item_contact, parent, false));
+    public ContactsRecyclerViewAdapter(List<DummyContent.Contact> items, ContactsFragment.OnListFragmentInteractionListener listener) {
+        mValues = items;
+        mListener = listener;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
-        holder.setContact(mContacts.get(position));
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.fragment_contacts, parent, false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        holder.mItem = mValues.get(position);
+        holder.mIdView.setText(mValues.get(position).id);
+        holder.mContentView.setText(mValues.get(position).contact);
+
+        holder.mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (null != mListener) {
+                    // Notify the active callbacks interface (the activity, if the
+                    // fragment is attached to one) that an item has been selected.
+                    mListener.onListFragmentInteraction(holder.mItem);
+                }
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return mContacts.size();
+        return mValues.size();
     }
 
-    public class ContactViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final ItemContactBinding binding;
-        private ContactModel mContact;
+        public final TextView mIdView;
+        public final TextView mContentView;
+        public DummyContent.Contact mItem;
 
-        public ContactViewHolder(View view) {
+        public ViewHolder(View view) {
             super(view);
             mView = view;
-            binding = ItemContactBinding.bind(view);
+            mIdView = (TextView) view.findViewById(R.id.item_number);
+            mContentView = (TextView) view.findViewById(R.id.content);
         }
 
-        public void setContact(ContactModel contact) {
-            mContact = contact;
-            binding.contactName.setText(contact.getEmail());
+        @Override
+        public String toString() {
+            return super.toString() + " '" + mContentView.getText() + "'";
         }
     }
 }
