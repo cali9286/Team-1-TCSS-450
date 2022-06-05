@@ -11,7 +11,7 @@
         android:title="@string/title_Contacts" />
 
     <item
-        android:id="@+id/navigation_messagesFragment"
+        android:id="@+id/navigation_chatsFragment"
         android:icon="@drawable/ic_baseline_message_24"
         android:title="@string/title_messages" />
 

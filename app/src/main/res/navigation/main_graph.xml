@@ -9,7 +9,11 @@
         android:id="@+id/navigation_messagesFragment"
         android:name="edu.uw.tcss450.ckald.team1tcss450.ui.messages.MessagesFragment"
         android:label="@string/title_messages"
-        tools:layout="@layout/fragment_messages" />
+        tools:layout="@layout/fragment_messages" >
+        <argument
+            android:name="messagesFragment"
+            app:argType="edu.uw.tcss450.ckald.team1tcss450.ui.messages.MessagesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_weatherFragment"
         android:name="edu.uw.tcss450.ckald.team1tcss450.ui.weather.WeatherFragment"
@@ -39,4 +43,12 @@
         android:label="@string/title_themes"
         tools:layout="@layout/fragment_themes"
         />
+    <fragment
+        android:id="@+id/navigation_chatsFragment"
+        android:name="edu.uw.tcss450.ckald.team1tcss450.ui.messages.ChatsFragment"
+        android:label="Chats" >
+        <action
+            android:id="@+id/action_navigation_chatsFragment_to_navigation_messagesFragment"
+            app:destination="@id/navigation_messagesFragment" />
+    </fragment>
 </navigation>

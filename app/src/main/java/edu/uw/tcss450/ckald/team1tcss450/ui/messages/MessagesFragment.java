@@ -1,6 +1,7 @@
 package edu.uw.tcss450.ckald.team1tcss450.ui.messages;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.Serializable;
+
 import edu.uw.tcss450.ckald.team1tcss450.R;
 import edu.uw.tcss450.ckald.team1tcss450.databinding.FragmentMessagesBinding;
 import edu.uw.tcss450.ckald.team1tcss450.model.UserInfoViewModel;
@@ -18,23 +21,28 @@ import edu.uw.tcss450.ckald.team1tcss450.model.UserInfoViewModel;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MessagesFragment extends Fragment {
+public class MessagesFragment extends Fragment implements Serializable {
 
     //The chat ID for "global" chat
-    private static final int HARD_CODED_CHAT_ID = 1;
+    private static int HARD_CODED_CHAT_ID;
 
     private MessagesViewModel mChatModel;
     private UserInfoViewModel mUserModel;
 
     private MessagesSendViewModel mSendModel;
 
-    public MessagesFragment() {
-        // Required empty public constructor
-    }
+//    public MessagesFragment(int i) {
+//        HARD_CODED_CHAT_ID = i;
+//    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        Log.e("       new frag created","tostring: ");
+        MessagesFragment[] mf = ChatGenerator.getCHATS();
         super.onCreate(savedInstanceState);
+        //HARD_CODED_CHAT_ID = getArguments().getInt("idnum");
+        HARD_CODED_CHAT_ID = mf[0].getArguments().getInt("idnum");
+        //HARD_CODED_CHAT_ID = 1;
         ViewModelProvider provider = new ViewModelProvider(getActivity());
         mUserModel = provider.get(UserInfoViewModel.class);
         mChatModel = provider.get(MessagesViewModel.class);
@@ -94,7 +102,21 @@ public class MessagesFragment extends Fragment {
         });
         //when we get the response back from the server, clear the edittext
         mSendModel.addResponseObserver(getViewLifecycleOwner(), response ->
-                binding.editMessage.setText(""));
+                binding.editMessage.setText("" /*+ getArguments().getInt("idnum2")*/));
 
+
+    }
+    public static MessagesFragment newInstance(int idnum) {
+        Bundle args = new Bundle();
+        args.putInt("idnum", idnum);
+        MessagesFragment m = new MessagesFragment();
+        Log.e("       idnum: " + idnum,"tostring: " + m.toString());
+        m.setArguments(args);
+        return m;
+    }
+    public int setHardCodedChatId(String id) {
+        int idInt = Integer.valueOf(id);
+        HARD_CODED_CHAT_ID = idInt;
+        return idInt;
     }
 }

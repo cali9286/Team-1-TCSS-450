@@ -10,6 +10,7 @@
     <string name="action_register_short">Register</string>
     <string name="display_header_title">Phish Shows Welcomes:</string>
     <string name="image_description_logo">The Phish Logo</string>
+    <string name="action_link">Enter Chat</string>
 
     <!--Settings -->
     <string name="title_themes">Themes</string>
