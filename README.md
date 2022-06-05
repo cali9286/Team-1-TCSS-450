@@ -40,13 +40,13 @@ Successful Implementations
     - Navigation to themes page
 
 Not implemented
-    - Theme change does not occur dynamically
-    - CRUD for messages and contacts
-    - 5 Day weather forecast
-    - Contacts page is not interactive, unable to view contacts
-    - Password Recovery/Change
-    - Pop up notifications for new messages
-    - Contacts request notifications
+    -Theme change does not occur dynamically
+    -CRUD for messages and contacts
+    -5 Day weather forecast
+    -Contacts page is not interactive, unable to view contacts
+    -Password Recovery/Change
+    -Pop up notifications for new messages
+    -Contacts request notifications
 
 ---------------------------------------------------------------------------------------------------
 
