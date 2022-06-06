@@ -12,7 +12,7 @@ Successful Implementations
 2. Login
     - Successful log in with email and password
     - Option to remain logged in
-    -
+    
 
 
 3. Homepage
