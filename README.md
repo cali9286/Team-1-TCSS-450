@@ -40,20 +40,20 @@ Successful Implementations
     - Navigation to themes page
 
 Not implemented
-    -Theme change does not occur dynamically <br />
-    -CRUD for messages and contacts <br />
-    -5 Day weather forecast <br />
-    -Contacts page is not interactive, unable to view contacts <br />
-    -Password Recovery/Change <br />
-    -Pop up notifications for new messages <br />
-    -Contacts request notifications <br />
+    - Theme change does not occur dynamically <br />
+    - CRUD for messages and contacts <br />
+    - 5 Day weather forecast <br />
+    - Contacts page is not interactive, unable to view contacts <br />
+    - Password Recovery/Change <br />
+    - Pop up notifications for new messages <br />
+    - Contacts request notifications <br />
 
 ---------------------------------------------------------------------------------------------------
 
 GUEST ACCOUNT: 
 test1@test.com <br/>
 test12345 
-<br />
+<br /> <br />
 test2@test.com <br />
 test12345
 
