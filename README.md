@@ -39,7 +39,7 @@ Successful Implementations
     - User is able to log out
     - Navigation to themes page
 
-Not implemented
+Not implemented <br />
     - Theme change does not occur dynamically <br />
     - CRUD for messages and contacts <br />
     - 5 Day weather forecast <br />
