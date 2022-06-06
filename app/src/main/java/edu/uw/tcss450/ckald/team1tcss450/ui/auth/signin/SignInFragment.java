@@ -141,6 +141,7 @@ public class SignInFragment extends Fragment {
         mSignInModel.connect(
                 binding.editEmail.getText().toString(),
                 binding.editPassword.getText().toString());
+        mSignInModel.addToChat(1,binding.editEmail.getText().toString());
         //This is an Asynchronous call. No statements after should rely on the
         //result of connect().
     }

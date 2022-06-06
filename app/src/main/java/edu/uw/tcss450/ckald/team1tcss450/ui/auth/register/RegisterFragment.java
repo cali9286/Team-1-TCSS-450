@@ -117,12 +117,14 @@ public class RegisterFragment extends Fragment {
     }
 
     private void verifyAuthWithServer() {
+        String email = binding.editEmail.getText().toString();
         mRegisterModel.connect(
                 binding.editFirst.getText().toString(),
                 binding.editLast.getText().toString(),
-                binding.editEmail.getText().toString(),
+                email,
                 binding.editPassword1.getText().toString());
-        mRegisterModel.addToChat(1, binding.editEmail.getText().toString());
+
+        //mRegisterModel.addToChat(1, email);
         //This is an Asynchronous call. No statements after should rely on the
         //result of connect()
     }

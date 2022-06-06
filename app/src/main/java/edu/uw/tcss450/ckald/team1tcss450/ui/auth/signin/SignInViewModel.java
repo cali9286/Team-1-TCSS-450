@@ -14,6 +14,7 @@ import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -94,5 +95,28 @@ public class SignInViewModel extends AndroidViewModel {
                 Log.e("JSON PARSE", "JSON Parse Error in handleError");
             }
         }
+    }
+    public void addToChat(int chatid, String email) {
+        String url = getApplication().getResources().getString(R.string.base_url_service) +
+                "chats/" + chatid;
+        JSONObject body = new JSONObject();
+        try {
+            body.put("memberid", email);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Request request = new JsonObjectRequest(
+                Request.Method.PUT,
+                url,
+                body,
+                mResponse::setValue,
+                this::handleError);
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                10_000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        //Instantiate the RequestQueue and add the request to the queue
+        Volley.newRequestQueue(getApplication().getApplicationContext())
+                .add(request);
     }
 }

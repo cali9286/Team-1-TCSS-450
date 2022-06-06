@@ -31,22 +31,30 @@ import edu.uw.tcss450.ckald.team1tcss450.R;
 public class RegisterViewModel extends AndroidViewModel{
 
     private MutableLiveData<JSONObject> mResponse;
+    private MutableLiveData<JSONObject> mResponse2;
+
 
     public RegisterViewModel(@NonNull Application application) {
         super(application);
         mResponse = new MutableLiveData<>();
         mResponse.setValue(new JSONObject());
+        mResponse2 = new MutableLiveData<>();
+        mResponse2.setValue(new JSONObject());
     }
 
     public void addResponseObserver(@NonNull LifecycleOwner owner,
                                     @NonNull Observer<? super JSONObject> observer) {
         mResponse.observe(owner, observer);
+        mResponse2.observe(owner, observer);
     }
 
     private void handleError(final VolleyError error) {
         if (Objects.isNull(error.networkResponse)) {
             try {
                 mResponse.setValue(new JSONObject("{" +
+                        "error:\"" + error.getMessage() +
+                        "\"}"));
+                mResponse2.setValue(new JSONObject("{" +
                         "error:\"" + error.getMessage() +
                         "\"}"));
             } catch (JSONException e) {
@@ -61,6 +69,7 @@ public class RegisterViewModel extends AndroidViewModel{
                 response.put("code", error.networkResponse.statusCode);
                 response.put("data", new JSONObject(data));
                 mResponse.setValue(response);
+                mResponse2.setValue(response);
             } catch (JSONException e) {
                 Log.e("JSON PARSE", "JSON Parse Error in handleError");
             }
@@ -108,7 +117,7 @@ public class RegisterViewModel extends AndroidViewModel{
                 Request.Method.PUT,
                 url,
                 body,
-                mResponse::setValue,
+                mResponse2::setValue,
                 this::handleError);
         request.setRetryPolicy(new DefaultRetryPolicy(
                 10_000,
