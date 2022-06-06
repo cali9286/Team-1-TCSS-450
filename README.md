@@ -50,7 +50,7 @@ Not implemented <br />
 
 ---------------------------------------------------------------------------------------------------
 
-GUEST ACCOUNT: 
+GUEST ACCOUNT: <br />
 test1@test.com <br/>
 test12345 
 <br /> <br />
