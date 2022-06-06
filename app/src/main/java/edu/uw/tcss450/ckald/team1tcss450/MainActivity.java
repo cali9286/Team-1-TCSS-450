@@ -186,11 +186,7 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.fragment_themes);
             return true;
         }
-        if(id == R.id.navigation_profile) {
-            setContentView(R.layout.fragment_profile);
-            Log.d("PROFILE", "Clicked");
-            return true;
-        }
+
         if(id == R.id.action_sign_out){
             signOut();
             return true;
