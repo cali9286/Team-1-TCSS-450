@@ -50,9 +50,9 @@ Not implemented
 
 ---------------------------------------------------------------------------------------------------
 
-GUEST ACCOUNT:
-test1@test.com
-test12345
+GUEST ACCOUNT: \n
+test1@test.com \n 
+test12345 \n
 
 test2@test.com
 test12345
