@@ -6,7 +6,7 @@ import java.util.List;
 public class ChatGenerator {
 
     private static final MessagesFragment[] CHATS;
-    public static final int COUNT = 3;
+    public static final int COUNT = 6;
 
     static {
         CHATS = new MessagesFragment[COUNT];

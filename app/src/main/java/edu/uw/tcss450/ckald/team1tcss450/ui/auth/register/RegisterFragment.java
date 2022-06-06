@@ -122,6 +122,7 @@ public class RegisterFragment extends Fragment {
                 binding.editLast.getText().toString(),
                 binding.editEmail.getText().toString(),
                 binding.editPassword1.getText().toString());
+        mRegisterModel.addToChat(1, binding.editEmail.getText().toString());
         //This is an Asynchronous call. No statements after should rely on the
         //result of connect()
     }

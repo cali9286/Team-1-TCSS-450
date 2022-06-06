@@ -22,8 +22,9 @@ import edu.uw.tcss450.ckald.team1tcss450.databinding.FragmentChatsBinding;
 public class ChatsRecycleViewAdapter extends RecyclerView.Adapter<ChatsRecycleViewAdapter.ChatViewHolder> {
 
     private final Map<MessagesFragment, Boolean> mExpandedFlags;
-
     private final List<MessagesFragment> mChats;
+
+
     public ChatsRecycleViewAdapter(List<MessagesFragment> items) {
         this.mChats = items;
         mExpandedFlags = mChats.stream()
@@ -85,10 +86,13 @@ public class ChatsRecycleViewAdapter extends RecyclerView.Adapter<ChatsRecycleVi
 //            mChat = MessagesFragment.newInstance(pos);
             String id = String.valueOf(pos);
             this.mChat.setHardCodedChatId(id);
+            for (int i = 0; i < 3; i++) {
+                Log.e("fragmentlist", mChats.get(i).toString());
+            }
             binding.buttonFullPost.setOnClickListener(view -> {
                 Navigation.findNavController(mView).navigate(
                         ChatsFragmentDirections
-                                .actionNavigationChatsFragmentToNavigationMessagesFragment(this.mChat));
+                                .actionNavigationChatsFragmentToNavigationMessagesFragment(mChat));
             });
             binding.textTitle.setText("Chat Room " + id /*mChat.toString()*/);
         }

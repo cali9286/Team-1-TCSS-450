@@ -102,7 +102,7 @@ public class MessagesFragment extends Fragment implements Serializable {
         });
         //when we get the response back from the server, clear the edittext
         mSendModel.addResponseObserver(getViewLifecycleOwner(), response ->
-                binding.editMessage.setText("" /*+ getArguments().getInt("idnum2")*/));
+                binding.editMessage.setText(/*this.toString()*/"" /*+ getArguments().getInt("idnum2")*/));
 
 
     }
